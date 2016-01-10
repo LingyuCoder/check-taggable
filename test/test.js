@@ -5,7 +5,7 @@ const checker = require('../index');
 const os = require('os');
 const execSync = require('child_process').execSync;
 
-describe('check-tracked', () => {
+describe('check-taggable', () => {
   before(() => {
     execSync('git config user.email lingyucoder@gmail.com');
     execSync('git config user.name LingyuCoder');
