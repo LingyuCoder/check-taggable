@@ -6,6 +6,10 @@ const os = require('os');
 const execSync = require('child_process').execSync;
 
 describe('check-tracked', () => {
+  before(() => {
+    execSync('git config user.email lingyucoder@gmail.com');
+    execSync('git config user.name LingyuCoder');
+  });
   describe('success', () => {
     it('should resolve object with success true if tag can be used', () => {
       return checker('publish/success').should.be.fulfilledWith({
