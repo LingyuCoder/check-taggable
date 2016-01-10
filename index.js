@@ -5,8 +5,8 @@ const co = require('co');
 
 module.exports = co.wrap(function*(tag, cwd) {
   cwd = cwd || process.cwd();
-  if (typeof tag !== 'string') throw Promise.reject(new TypeError('Expected tag to be a string'));
-  if (typeof cwd !== 'string') throw Promise.reject(new TypeError('Expected cwd to be a string'));
+  if (typeof tag !== 'string') return Promise.reject(new TypeError('Expected tag to be a string'));
+  if (typeof cwd !== 'string') return Promise.reject(new TypeError('Expected cwd to be a string'));
   let cmdRst = '';
   try {
     cmdRst = execSync('git tag', {

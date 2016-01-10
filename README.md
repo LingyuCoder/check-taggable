@@ -9,7 +9,7 @@
 [![License](http://img.shields.io/npm/l/check-taggable.svg?style=flat-square)](LICENSE)
 [![npm download](https://img.shields.io/npm/dm/check-taggable.svg?style=flat-square)](https://npmjs.org/package/check-taggable)
 
-Check whether the tag can be used
+> Check whether the tag can be used
 
 ## Installation
 
@@ -18,6 +18,24 @@ $ npm install --save check-taggable
 ```
 
 ## Usage
+
+Promise check(tag[, cwd])
+
+```javascript
+const checker = require('check-taggable');
+checker('publish/sometag', '/Users/xxx/project_dir') // default process.cwd()
+  .then(result => {
+    /*
+    result = {
+      // check result
+      success: true|false
+    }
+    */
+    if(result.success)
+      console.log('Passed');
+  })
+  .catch(e => console.error(e.message));
+```
 
 ## Test
 
